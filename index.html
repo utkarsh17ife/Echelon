@@ -113,6 +113,26 @@
 
     <!-- Application JavaScript -->
     <script src="js/app.js"></script>
+	
+    <script type="application/javascript" src="https://cdnjs.com/libraries/fingerprintjs2"></script>
+
+<script>
+
+if (window.requestIdleCallback) {
+    requestIdleCallback(function () {
+        Fingerprint2.get(function (components) {
+          console.log(components) // an array of components: {key: ..., value: ...}
+        })
+    })
+} else {
+    setTimeout(function () {
+        Fingerprint2.get(function (components) {
+          console.log(components) // an array of components: {key: ..., value: ...}
+        })  
+    }, 500)
+}
+
+</script>
 
 </body>
 
